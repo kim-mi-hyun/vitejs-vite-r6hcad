@@ -11,7 +11,7 @@ const todoList = ref([
 
 const handleClick = () => {
   const text = inputValue.value;
-  todoList.value.push({"text":const,"done":false});
+  todoList.value.push({"text":text,"done":false});
   inputValue.value = '';
 };
 
