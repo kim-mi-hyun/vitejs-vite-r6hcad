@@ -2,17 +2,17 @@
 <script setup>
 import { ref } from 'vue';
 
-const inpuValue = ref('');
+const inputValue = ref('');
 const todoList = ref([
   { text: 'veu', done: false },
   { text: 'react', done: false },
   { text: 'vercel', done: false },
 ]);
-const inputStatus = ref('');
 
 const handleClick = () => {
-  todoList.value.push(inpuValue.value);
-  inpuValue.value = '';
+  const text = inputValue.value;
+  todoList.value.push({"text":const,"done":false});
+  inputValue.value = '';
 };
 
 const handleDelete = (index) => {
@@ -28,7 +28,7 @@ const handleModify = (index) => {
   <h1>Todo List</h1>
 
   <div>{{ todoList }}</div>
-  <input v-model="inpuValue" />
+  <input v-model="inputValue" />
   <button @click="handleClick">확인</button>
 
   <div class="todo-item" v-for="(item, index) in todoList">
